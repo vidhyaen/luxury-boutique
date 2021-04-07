@@ -1,0 +1,115 @@
+<body>
+	
+	<div class="container">
+     
+       
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+                    @foreach ($products as $product)
+                    <div class="col-md-4">
+                        <figure class="card card-product mt-5">
+                            <div class="img-wrap mt-4"><img src="/{{ $product->image }}" class="rounded zoom"></div>
+                            <figcaption class="info-wrap text-primary font-weight-bold text-center">
+                                <p class="title">Product name {{$product->name}}</p>
+                                <p class="desc">Price {{$product->price}}</p>   <!-- rating-wrap.// -->
+                            </figcaption> <!-- bottom-wrap.// -->
+                        </figure>
+                    </div>
+					
+      </div>
+                    
+				
+						<div class="action">
+							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
+							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>  @endforeach
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+@endsection
+
+@push('page-styles')
+
+@push('page-styles')
+
+<style>
+   
+   .bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+.category_block li:hover {
+    background-color: #007bff;
+}
+.category_block li:hover a {
+    color: #ffffff;
+}
+.category_block li a {
+    color: #343a40;
+}
+.add_to_cart_block .price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 200%;
+    margin-bottom: 0;
+}
+.add_to_cart_block .price_discounted {
+    color: #343a40;
+    text-align: center;
+    text-decoration: line-through;
+    font-size: 140%;
+}
+.product_rassurance {
+    padding: 10px;
+    margin-top: 15px;
+    background: #ffffff;
+    border: 1px solid #6c757d;
+    color: #6c757d;
+}
+.product_rassurance .list-inline {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+.product_rassurance .list-inline li:hover {
+    color: #343a40;
+}
+.reviews_product .fa-star {
+    color: gold;
+}
+.pagination {
+    margin-top: 20px;
+}
+footer {
+    background: #343a40;
+    padding: 40px;
+}
+footer a {
+    color: #f8f9fa!important
+}
+  .zoom {
+        padding: 50px;
+        transition: transform 0.2s;
+        width: 100px;
+        height: 50px;
+        margin: 0 auto;
+      }
+
+      .zoom:hover {
+        -ms-transform: scale(2); /* IE 9 */
+        -webkit-transform: scale(2); /* Safari 3-8 */
+        transform: scale(2);
+      }
+    </style>
+
+@endpush
+
+@endpush
+
